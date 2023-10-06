@@ -1,0 +1,58 @@
+ci:
+    autoupdate_schedule: monthly
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-docstring-first
+    -   id: check-json
+    -   id: check-yaml
+    -   id: name-tests-test
+    -   id: debug-statements
+    -   id: check-added-large-files
+    -   id: requirements-txt-fixer
+    -   id: double-quote-string-fixer
+-   repo: https://github.com/pycqa/flake8
+    rev: 6.1.0
+    hooks:
+    -   id: flake8
+        additional_dependencies: [flake8-typing-imports==1.14.0]
+        args: [--min-python-version=3.8]
+-   repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v2.0.4
+    hooks:
+    -   id: autopep8
+-   repo: https://github.com/asottile/reorder_python_imports
+    rev: v3.12.0
+    hooks:
+    -   id: reorder-python-imports
+        args: [--py3-plus]
+-   repo: https://github.com/asottile/add-trailing-comma
+    rev: v3.1.0
+    hooks:
+    -   id: add-trailing-comma
+        args: [--py36-plus]
+-   repo: https://github.com/theendlessriver13/double-indent
+    rev: 0.1.4
+    hooks:
+      - id: double-indent
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v3.14.0
+    hooks:
+    -   id: pyupgrade
+        args: [--py38-plus]
+-   repo: https://github.com/asottile/setup-cfg-fmt
+    rev: v2.5.0
+    hooks:
+    -   id: setup-cfg-fmt
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.5.1
+    hooks:
+    -   id: mypy
+-   repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: 'v16.0.6'
+    hooks:
+    -   id: clang-format
+        exclude: ^solpos(00)?.(c|h)
