@@ -19,14 +19,36 @@ Calculate the true solar time of a date and a location.
 | `lat`    | DOUBLE PRECISION | the latitude in decimal degrees of the position  |
 | `lon`    | DOUBLE PRECISION | the longitude in decimal degrees of the position |
 
+**Optional arguments**
+
+| **Name**        | **Type**      | **Description**                                                                                                                                                                          |
+| --------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data_interval` | INT DEFAULT 0 | Interval of a measurement period in seconds. Forces solpos to use the time and date from the interval midpoint. The INPUT time is assumed to be the **end** of the measurement interval. |
+
+**Sample usage**
+
+Get the solar time for a date at a selected position:
+
 ```sql
 SELECT solar_time('2023-10-06 15:30+00:00', 51.481, 7.217)
 ```
 
 ```console
-        solar_time
---------------------------
- 2023-10-06 16:10:43.7+00
+      solar_time
+-----------------------
+ 2023-10-06 16:10:43.7
+```
+
+Get the solar time for a date at a selected position. Each timestamp is a one-hourly interval labelled at the **end** of the interval:
+
+```sql
+SELECT solar_time('2023-10-06 15:30+00:00', 51.481, 7.217, 3600)
+```
+
+```console
+       solar_time
+-------------------------
+ 2023-10-06 16:10:43.425
 ```
 
 ### References

@@ -18,7 +18,7 @@ COPY ./pg_solpos.c .
 COPY ./solpos* .
 
 RUN : \
-    && cc -fPIC -Werror -c solpos.c \
-    && cc -fPIC -Werror -c pg_solpos.c -lm -I /usr/include/postgresql/${VERSION}/server \
+    && cc -fPIC -Werror -Wall -c solpos.c \
+    && cc -fPIC -Werror -Wall -c pg_solpos.c -lm -I /usr/include/postgresql/${VERSION}/server \
     && cc -shared -o pg_solpos.so pg_solpos.o solpos.o \
     && find . -name "*solpos*" | grep -v pg_solpos.so | xargs rm
