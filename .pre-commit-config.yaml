@@ -2,7 +2,7 @@ ci:
     autoupdate_schedule: monthly
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v5.0.0
     hooks:
     -   id: trailing-whitespace
     -   id: end-of-file-fixer
@@ -15,17 +15,17 @@ repos:
     -   id: requirements-txt-fixer
     -   id: double-quote-string-fixer
 -   repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
+    rev: 7.1.1
     hooks:
     -   id: flake8
         additional_dependencies: [flake8-typing-imports==1.14.0]
         args: [--min-python-version=3.8]
 -   repo: https://github.com/hhatto/autopep8
-    rev: v2.0.4
+    rev: v2.3.1
     hooks:
     -   id: autopep8
 -   repo: https://github.com/asottile/reorder-python-imports
-    rev: v3.12.0
+    rev: v3.13.0
     hooks:
     -   id: reorder-python-imports
         args: [--py3-plus]
@@ -35,11 +35,11 @@ repos:
     -   id: add-trailing-comma
         args: [--py36-plus]
 -   repo: https://github.com/theendlessriver13/double-indent
-    rev: 0.1.4
+    rev: 0.1.5
     hooks:
       - id: double-indent
 -   repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.0
+    rev: v3.17.0
     hooks:
     -   id: pyupgrade
         args: [--py38-plus]
@@ -48,11 +48,11 @@ repos:
     hooks:
     -   id: setup-cfg-fmt
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.7.1
+    rev: v1.11.2
     hooks:
     -   id: mypy
 -   repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: 'v17.0.6'
+    rev: 'v19.1.1'
     hooks:
     -   id: clang-format
         exclude: ^solpos(00)?.(c|h)
