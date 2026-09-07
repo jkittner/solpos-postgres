@@ -2,7 +2,7 @@ ci:
     autoupdate_schedule: monthly
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
     -   id: trailing-whitespace
     -   id: end-of-file-fixer
@@ -25,12 +25,12 @@ repos:
     hooks:
     -   id: autopep8
 -   repo: https://github.com/asottile/reorder-python-imports
-    rev: v3.15.0
+    rev: v3.17.0
     hooks:
     -   id: reorder-python-imports
         args: [--py3-plus]
 -   repo: https://github.com/asottile/add-trailing-comma
-    rev: v3.2.0
+    rev: v4.0.0
     hooks:
     -   id: add-trailing-comma
         args: [--py36-plus]
@@ -39,20 +39,20 @@ repos:
     hooks:
       - id: double-indent
 -   repo: https://github.com/asottile/pyupgrade
-    rev: v3.20.0
+    rev: v3.21.2
     hooks:
     -   id: pyupgrade
         args: [--py38-plus]
 -   repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v2.8.0
+    rev: v3.2.0
     hooks:
     -   id: setup-cfg-fmt
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.16.1
+    rev: v2.3.1
     hooks:
     -   id: mypy
 -   repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: 'v20.1.7'
+    rev: 'v23.1.0'
     hooks:
     -   id: clang-format
         exclude: ^solpos(00)?.(c|h)
